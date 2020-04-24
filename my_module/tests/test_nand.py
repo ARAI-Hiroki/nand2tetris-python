@@ -7,6 +7,7 @@ class TestNand(TestCase):
     nand = Nand()
 
     patterns = (
+      # -- inputs -- -- outputs --
       ((True, True),    False),
       ((True, False),   True),
       ((False, False),  True),
