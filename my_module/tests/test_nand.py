@@ -1,10 +1,10 @@
 from unittest import TestCase, main
-from src.nand import Nand
+from src.g_nand import GNand
 
 class TestNand(TestCase):
 
   def test_nand(self):
-    nand = Nand()
+    gNand = GNand()
 
     patterns = (
       # -- inputs -- -- outputs --
@@ -15,5 +15,5 @@ class TestNand(TestCase):
     )
 
     for input, actual in patterns:
-      expected = nand.clock(input)
+      expected = gNand.clock(input)
       self.assertEqual(expected, actual)
