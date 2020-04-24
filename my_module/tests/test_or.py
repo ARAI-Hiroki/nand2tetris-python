@@ -1,17 +1,17 @@
 from unittest import TestCase, main
-from src.nand_gate import NandGate
+from src.or_gate import OrGate
 
-class TestNandGate(TestCase):
+class TestOrGate(TestCase):
 
   def test(self):
-    gate = NandGate()
+    gate = OrGate()
 
     patterns = (
       # -- inputs -- -- outputs --
-      ((True, True),    False),
+      ((True, True),    True),
       ((True, False),   True),
       ((False, True),  True),
-      ((False, False),  True)
+      ((False, False),  False)
     )
 
     for input, expected in patterns:

@@ -1,17 +1,17 @@
 from unittest import TestCase, main
-from src.nand_gate import NandGate
+from src.and_gate import AndGate
 
-class TestNandGate(TestCase):
+class TestAndGate(TestCase):
 
   def test(self):
-    gate = NandGate()
+    gate = AndGate()
 
     patterns = (
       # -- inputs -- -- outputs --
-      ((True, True),    False),
-      ((True, False),   True),
-      ((False, True),  True),
-      ((False, False),  True)
+      ((True, True),    True),
+      ((True, False),   False),
+      ((False, True),  False),
+      ((False, False),  False)
     )
 
     for input, expected in patterns:
