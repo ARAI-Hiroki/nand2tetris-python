@@ -1,14 +1,16 @@
 from .nand_gate import NandGate
+from .digital_circle import DigitalCircle
 
-class OrGate:
 
-  def __init__(self):
-    self.nand_gate = NandGate()
+class OrGate(DigitalCircle):
 
-  def clock(self, i):
-    ng = self.nand_gate
+    def __init__(self):
+        self.nand_gate = NandGate()
 
-    return ng.clock((
-        ng.clock((i[0], i[0])),
-        ng.clock((i[1], i[1]))
-    ))
+    def clock(self, i):
+        ng = self.nand_gate
+
+        return ng.clock(
+            ng.clock((i[0], i[0])) +
+            ng.clock((i[1], i[1]))
+        )

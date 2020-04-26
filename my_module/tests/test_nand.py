@@ -1,20 +1,20 @@
 from unittest import TestCase, main
 from src.nand_gate import NandGate
+from tests.base_clock import TestBaseClock
 
-class TestNandGate(TestCase):
 
-  def test(self):
-    gate = NandGate()
+class TestNandGate(TestBaseClock):
 
-    patterns = (
-      # -- inputs -- -- outputs --
-      ((True, True),    False),
-      ((True, False),   True),
-      ((False, True),  True),
-      ((False, False),  True)
-    )
+    def test(self):
 
-    for input, expected in patterns:
-      with self.subTest(input=input, expected=expected):
-        actual = gate.clock(input)
-        self.assertEqual(expected, actual)
+        gate = NandGate()
+
+        patterns = (
+            #  -- inputs --   -- outputs --
+            ((True,     True),  (False,)),
+            ((True,     False), (True,)),
+            ((False,    True),  (True,)),
+            ((False,    False), (True,))
+        )
+
+        self.exec(gate, patterns)

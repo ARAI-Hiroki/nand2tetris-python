@@ -1,20 +1,19 @@
 from unittest import TestCase, main
 from src.or_gate import OrGate
+from tests.base_clock import TestBaseClock
 
-class TestOrGate(TestCase):
 
-  def test(self):
-    gate = OrGate()
+class TestOrGate(TestBaseClock):
 
-    patterns = (
-      # -- inputs -- -- outputs --
-      ((True, True),    True),
-      ((True, False),   True),
-      ((False, True),  True),
-      ((False, False),  False)
-    )
+    def test(self):
+        gate = OrGate()
 
-    for input, expected in patterns:
-      with self.subTest(input=input, expected=expected):
-        actual = gate.clock(input)
-        self.assertEqual(expected, actual)
+        patterns = (
+            # -- inputs -- -- outputs --
+            ((1,     True),  (True,)),
+            ((True,     False), (True,)),
+            ((False,    True),  (True,)),
+            ((False,    False), (False,)),
+        )
+
+        self.exec(gate, patterns)
