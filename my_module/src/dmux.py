@@ -16,6 +16,6 @@ class DMux(DigitalCircle):
         ng = self.not_gate
 
         return (
-            ag.clock((i[0],) + ng.clock((i[1],))) +
-            ag.clock((i[0], i[1]))
+            ag.clock((i[0],) + ng.clock((i[1],)))
+            + ag.clock((i[0], i[1]))
         )

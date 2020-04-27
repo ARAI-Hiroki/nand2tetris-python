@@ -1,19 +1,19 @@
 from .digital_circle import DigitalCircle
-from .mux4way import Mux4Way
+from .mux8way import Mux8Way
 from functools import reduce
 
 
-class Mux4Way16(DigitalCircle):
+class Mux8Way16(DigitalCircle):
 
     def __init__(self):
-        self.mux4 = Mux4Way()
+        self.mux8 = Mux8Way()
 
     def clock(self, i):
 
-        mu = self.mux4
+        mu = self.mux8
 
-        inp = i[0:4]
-        sel = i[4:6]
+        inp = i[0:8]
+        sel = i[8:11]
 
         inputs = tuple(zip(*inp))
 
