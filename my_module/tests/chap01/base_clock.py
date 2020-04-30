@@ -1,5 +1,5 @@
 from unittest import TestCase, main
-from src.digital_circle import DigitalCircle
+from src.chap01.digital_circle import DigitalCircle
 
 
 class TestBaseClock(TestCase):

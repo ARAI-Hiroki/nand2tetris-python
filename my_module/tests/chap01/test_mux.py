@@ -1,6 +1,6 @@
 from unittest import TestCase, main
-from src.mux import Mux
-from tests.base_clock import TestBaseClock
+from src.chap01.mux import Mux
+from tests.chap01.base_clock import TestBaseClock
 
 
 class TestMux(TestBaseClock):

@@ -1,6 +1,6 @@
 from unittest import TestCase, main
-from src.dmux8way import DMux8Way
-from tests.base_clock import TestBaseClock
+from src.chap01.dmux8way import DMux8Way
+from tests.chap01.base_clock import TestBaseClock
 
 
 class TestMux(TestBaseClock):

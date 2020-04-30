@@ -1,19 +1,20 @@
 from unittest import TestCase, main
-from src.xor_gate import XorGate
-from tests.base_clock import TestBaseClock
+from src.chap01.nand_gate import NandGate
+from tests.chap01.base_clock import TestBaseClock
 
 
-class TestXorGate(TestBaseClock):
+class TestNandGate(TestBaseClock):
 
     def test(self):
-        gate = XorGate()
+
+        gate = NandGate()
 
         patterns = (
-            # -- inputs -- -- outputs --
+            #  -- inputs --   -- outputs --
             ((True,     True),  (False,)),
             ((True,     False), (True,)),
             ((False,    True),  (True,)),
-            ((False,    False), (False,)),
+            ((False,    False), (True,))
         )
 
         self.exec(gate, patterns)

@@ -1,6 +1,6 @@
 from unittest import TestCase, main
-from src.or_gate import OrGate
-from tests.base_clock import TestBaseClock
+from src.chap01.or_gate import OrGate
+from tests.chap01.base_clock import TestBaseClock
 
 
 class TestOrGate(TestBaseClock):

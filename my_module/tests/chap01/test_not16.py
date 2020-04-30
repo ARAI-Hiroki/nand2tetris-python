@@ -1,6 +1,6 @@
 from unittest import TestCase, main
-from src.not16_gate import Not16Gate
-from tests.base_clock import TestBaseClock
+from src.chap01.not16_gate import Not16Gate
+from tests.chap01.base_clock import TestBaseClock
 
 
 class TestNot16Gate(TestBaseClock):
