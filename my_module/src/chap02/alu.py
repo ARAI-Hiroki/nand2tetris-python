@@ -4,7 +4,8 @@ from ..chap01.or_gate import OrGate
 from ..chap01.not_gate import NotGate
 from ..chap01.xor_gate import XorGate
 from ..chap01.digital_circle import DigitalCircle
-from .half_adder import HalfAdder
+from ..chap01.mux16 import Mux16
+
 from .full_adder16 import FullAdder16
 
 
@@ -19,6 +20,7 @@ class ALU(DigitalCircle):
         ng = NotGate()
         xo = XorGate()
         adder = FullAdder16()
+        mux = Mux16()
 
         x = i[0:16]   # 入力 x
         y = i[16:32]  # 入力 y
@@ -58,13 +60,15 @@ class ALU(DigitalCircle):
         and_res = tuple(reduce(lambda before, xy:
                                before + ag.clock(xy), tuple(zip(*(x, y))), ()))
 
-        # 加算か乗算かによる結果を取得
+        加算か乗算かによる結果を取得
         out = tuple(reduce(lambda before, xy:
                            before + og.clock(
                                ag.clock((f, xy[0])) +
                                ag.clock(ng.clock((f,)) + (xy[1],))
                            ),
                            tuple(zip(*(add_res, and_res))), ()))
+        # TODO mux16 を使って書き直す
+        # out = mux.clock((and_res, add_res, f))
 
         #  out  no    out
         # ----------------
