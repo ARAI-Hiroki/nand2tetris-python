@@ -9,8 +9,8 @@ class TestBasicGate(BaseTest):
         inputs = self.basic_bits['1']
 
         expected = (
-            1,
-            0,
+            (1,),
+            (0,),
         )
 
         self.exec(g_not, inputs, expected)
@@ -20,10 +20,10 @@ class TestBasicGate(BaseTest):
         inputs = self.basic_bits['2']
 
         expected = (
-            0,
-            0,
-            0,
-            1,
+            (0,),
+            (0,),
+            (0,),
+            (1,),
         )
 
         self.exec(g_and, inputs, expected)
@@ -33,10 +33,10 @@ class TestBasicGate(BaseTest):
         inputs = self.basic_bits['2']
 
         expected = (
-            0,
-            1,
-            1,
-            1,
+            (0,),
+            (1,),
+            (1,),
+            (1,),
         )
 
         self.exec(g_or, inputs, expected)
@@ -46,10 +46,10 @@ class TestBasicGate(BaseTest):
         inputs = self.basic_bits['2']
 
         expected = (
-            0,
-            1,
-            1,
-            0,
+            (0,),
+            (1,),
+            (1,),
+            (0,),
         )
 
         self.exec(g_xor, inputs, expected)
@@ -59,14 +59,14 @@ class TestBasicGate(BaseTest):
         inputs = self.basic_bits['3']
 
         expected = (
-            0,
-            0,
-            0,
-            1,
-            1,
-            0,
-            1,
-            1,
+            (0,),
+            (0,),
+            (0,),
+            (1,),
+            (1,),
+            (0,),
+            (1,),
+            (1,),
         )
 
         self.exec(mux, inputs, expected)
